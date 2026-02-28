@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://msxx4dca1o3l" path="res://background/house3.png" id="6_f6ptj"]
 [ext_resource type="Texture2D" uid="uid://22eox4ar15nj" path="res://background/house4-.png" id="7_3m5ht"]
 [ext_resource type="Texture2D" uid="uid://dc33dq418uklj" path="res://background/house5-.png" id="9_dubn7"]
+[ext_resource type="PackedScene" uid="uid://g55fpcra7euo" path="res://player.tscn" id="10_dubn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("2_hh0fu")
@@ -1031,3 +1032,6 @@ texture = ExtResource("5_08kqv")
 position = Vector2(3534.0002, -219)
 scale = Vector2(1.9225942, 1.9225942)
 texture = ExtResource("9_dubn7")
+
+[node name="player" parent="." unique_id=1981483290 instance=ExtResource("10_dubn7")]
+position = Vector2(646, -3)
