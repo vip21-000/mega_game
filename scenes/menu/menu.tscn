@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bf76pfx1c004f"]
+
+[ext_resource type="Script" uid="uid://c6e37p8y4dyb" path="res://scenes/menu/menu.gd" id="1_klgdb"]
+[ext_resource type="Texture2D" uid="uid://d2ynoj2pr2eml" path="res://background/poljana.png" id="2_mcvr8"]
+
+[node name="Menu" type="CanvasLayer" unique_id=1320789879]
+script = ExtResource("1_klgdb")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1766978812]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -37.0
+offset_right = 23.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=708002165]
+layout_mode = 2
+texture = ExtResource("2_mcvr8")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer" unique_id=1942851400]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+split_offsets = PackedInt32Array(31)
+split_offset = 31
+
+[node name="Start" type="Button" parent="MarginContainer/VSplitContainer" unique_id=1983307387]
+layout_mode = 2
+text = "Start"
+
+[node name="Exit" type="Button" parent="MarginContainer/VSplitContainer" unique_id=40240322]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VSplitContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/Exit" to="." method="_on_exit_pressed"]
