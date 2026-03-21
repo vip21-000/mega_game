@@ -18,7 +18,7 @@
 
 [sub_resource type="Compositor" id="Compositor_f6ptj"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3hyu"]
 texture = ExtResource("3_jhx03")
 texture_region_size = Vector2i(64, 64)
 4:1/0 = 0
@@ -52,7 +52,7 @@ texture_region_size = Vector2i(64, 64)
 3:5/0 = 0
 4:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5onr"]
 texture = ExtResource("4_o8fc1")
 2:0/0 = 0
 2:0/0/terrain_set = 0
@@ -1006,8 +1006,8 @@ terrain_set_0/terrain_1/name = "Terrain 1"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 terrain_set_0/terrain_2/name = "Terrain 2"
 terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_0hol4")
-sources/1 = SubResource("TileSetAtlasSource_q6r6c")
+sources/0 = SubResource("TileSetAtlasSource_e3hyu")
+sources/1 = SubResource("TileSetAtlasSource_q5onr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hsdmi"]
 texture = ExtResource("5_xo05s")
