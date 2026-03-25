@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bvapqv0g0nmnk"]
 
 [ext_resource type="Texture2D" uid="uid://d3qft8knsdh5y" path="res://background/background.png" id="1_e3hyu"]
+[ext_resource type="Script" uid="uid://dtejtwwgxs28q" path="res://scenes/world.gd" id="1_q5onr"]
 [ext_resource type="Texture2D" uid="uid://d2ynoj2pr2eml" path="res://background/poljana.png" id="2_q5onr"]
 [ext_resource type="Texture2D" uid="uid://dms10q12yvjvs" path="res://assets/Tiles.png" id="3_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dnt71i06fx872" path="res://assets/Assets.png" id="4_o8fc1"]
@@ -1298,6 +1299,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_hsdmi")
 
 [node name="world" type="Node2D" unique_id=1995406514]
+script = ExtResource("1_q5onr")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=492573208]
 environment = SubResource("Environment_dubn7")
@@ -1352,8 +1354,18 @@ texture = ExtResource("10_2lf6f")
 [node name="player" parent="." unique_id=1981483290 instance=ExtResource("11_7iits")]
 position = Vector2(637, 7)
 
+[node name="minigame" type="Button" parent="player" unique_id=463503604]
+offset_left = -373.0
+offset_top = -364.0
+offset_right = -287.0
+offset_bottom = -333.0
+text = "minigame
+"
+
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=827123476]
 position = Vector2(24, -144)
 scale = Vector2(77.798546, 67.37765)
 zoom = Vector2(1.455, 1.455)
 position_smoothing_enabled = true
+
+[connection signal="pressed" from="player/minigame" to="." method="_on_minigame_pressed"]
