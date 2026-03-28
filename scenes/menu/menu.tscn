@@ -28,16 +28,30 @@ texture = ExtResource("2_mcvr8")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-split_offsets = PackedInt32Array(31)
-split_offset = 31
+split_offsets = PackedInt32Array(66, 144)
+split_offset = 66
 
-[node name="Start" type="Button" parent="MarginContainer/VSplitContainer" unique_id=1983307387]
+[node name="start" type="Button" parent="MarginContainer/VSplitContainer" unique_id=1983307387]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
 text = "Start"
 
-[node name="Exit" type="Button" parent="MarginContainer/VSplitContainer" unique_id=40240322]
+[node name="settings" type="Button" parent="MarginContainer/VSplitContainer" unique_id=2057111318]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_font_sizes/font_size = 42
+text = "Settings"
+
+[node name="exit" type="Button" parent="MarginContainer/VSplitContainer" unique_id=40240322]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
 text = "Exit"
 
-[connection signal="pressed" from="MarginContainer/VSplitContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VSplitContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VSplitContainer/exit" to="." method="_on_exit_pressed"]
