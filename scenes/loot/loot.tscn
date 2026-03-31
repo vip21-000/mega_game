@@ -9,31 +9,31 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dyds6"]
 radius = 125.0
 
-[node name="loot" type="Area2D" unique_id=904022397]
+[node name="loot" type="Area2D" unique_id=395969542]
 script = ExtResource("1_dyds6")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=555895122]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1310672291]
 position = Vector2(8, -54)
 
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=1579268842]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1406392600]
 shape = SubResource("CircleShape2D_dyds6")
 
-[node name="vodka" type="Sprite2D" parent="." unique_id=853910119]
+[node name="vodka" type="Sprite2D" parent="." unique_id=587735639]
 visible = false
 position = Vector2(8, -54)
 texture = ExtResource("1_6mdjo")
 
-[node name="beer" type="Sprite2D" parent="." unique_id=1071604701]
+[node name="beer" type="Sprite2D" parent="." unique_id=1224917936]
 visible = false
 position = Vector2(8, -54)
 texture = ExtResource("2_dyds6")
 
-[node name="salo" type="Sprite2D" parent="." unique_id=2082372711]
+[node name="salo" type="Sprite2D" parent="." unique_id=788689246]
 visible = false
 position = Vector2(8, -54)
 texture = ExtResource("3_nwktx")
 
-[node name="apple" type="Sprite2D" parent="." unique_id=1941103035]
+[node name="apple" type="Sprite2D" parent="." unique_id=206902722]
 visible = false
 position = Vector2(8, -54)
 scale = Vector2(1.36, 1.36)
