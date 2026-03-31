@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dms10q12yvjvs" path="res://assets/Tiles.png" id="1_0gcsj"]
 [ext_resource type="PackedScene" uid="uid://g55fpcra7euo" path="res://scenes/player/player.tscn" id="1_lmkgc"]
 [ext_resource type="Texture2D" uid="uid://dnt71i06fx872" path="res://assets/Assets.png" id="2_lmkgc"]
+[ext_resource type="PackedScene" uid="uid://ut65vue4x67f" path="res://scenes/loot/loot.tscn" id="4_0gcsj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kuml"]
 texture = ExtResource("1_0gcsj")
@@ -1519,14 +1520,14 @@ sources/0 = SubResource("TileSetAtlasSource_lmkgc")
 
 [node name="mini_game" type="Node2D" unique_id=1297244508]
 
-[node name="player" parent="." unique_id=1981483290 instance=ExtResource("1_lmkgc")]
-position = Vector2(446.00003, -772)
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=388545374]
-position = Vector2(25.210102, -111.87004)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=388545374]
+position = Vector2(575, -461)
 scale = Vector2(77.798546, 67.37765)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(1.3, 1.3)
 position_smoothing_enabled = true
+
+[node name="player" parent="." unique_id=1981483290 instance=ExtResource("1_lmkgc")]
+position = Vector2(555, -287)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=832255871]
 scale = Vector2(5.440001, 5.440001)
@@ -1536,3 +1537,6 @@ tile_set = SubResource("TileSet_burph")
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer" unique_id=404868156]
 tile_map_data = PackedByteArray("AAABAP//AAADABMAAAABAP7/AAADABEAAAABAP3/AAADABEAAAABAPz/AAADABEAAAABAPv/AAACABEAAAABAPr/AAADABIAAAABAPn/AAADABAAAAABAPj/AAADABAAAAAAAP//AAACABMAAAAAAP7/AAABABEAAAAAAP3/AAABABEAAAAAAPz/AAABABEAAAAAAPv/AAABABEAAAAAAPr/AAABABEAAAAAAPn/AAABABEAAAAAAPj/AAABABEAAAAKAP//AAADABMAAAAKAP7/AAADABEAAAAJAP//AAADABMAAAAJAP7/AAADABIAAAAIAP//AAADABMAAAAIAP7/AAACABEAAAAHAP//AAADABMAAAAHAP7/AAADABAAAAAGAP//AAADABMAAAAGAP7/AAACABEAAAAFAP//AAADABMAAAAFAP7/AAACABEAAAAEAP//AAADABMAAAAEAP7/AAADABAAAAADAP//AAADABMAAAADAP7/AAAEABEAAAACAP//AAADABMAAAACAP7/AAADABEAAAALAP//AAADABMAAAALAP7/AAADABEAAAALAP3/AAADABIAAAALAPz/AAADABIAAAALAPv/AAAEABEAAAALAPr/AAAEABEAAAALAPn/AAADABIAAAALAPj/AAADABEAAAAKAP3/AAACABAAAAAKAPz/AAABABEAAAAKAPv/AAABABEAAAAKAPr/AAABABEAAAAKAPn/AAABABEAAAAKAPj/AAABABEAAAAMAP7/AAAFABEAAAAMAP3/AAAFABEAAAAMAPz/AAAFABEAAAAMAPv/AAAFABEAAAAMAPr/AAAFABEAAAAMAPn/AAAFABEAAAAMAPj/AAAFABEAAAAMAP//AAAEABMAAAACAP3/AAAEABAAAAAJAP3/AAADAA8AAAAIAP3/AAADAA8AAAAHAP3/AAADAA8AAAAGAP3/AAADAA8AAAAFAP3/AAADAA8AAAAEAP3/AAADAA8AAAADAP3/AAADAA8AAAACAPz/AAAFABEAAAACAPv/AAAFABEAAAACAPr/AAAFABEAAAACAPn/AAAFABEAAAACAPj/AAAFABEAAAACAPf/AAAFABAAAAABAPf/AAADAA8AAAAAAPf/AAABABAAAAAMAPf/AAAFABAAAAALAPf/AAADAA8AAAAKAPf/AAACAA8AAAA=")
 tile_set = SubResource("TileSet_0gcsj")
+
+[node name="loot" parent="." unique_id=904022397 instance=ExtResource("4_0gcsj")]
+position = Vector2(419, -607)

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ut65vue4x67f"]
+
+[ext_resource type="Texture2D" uid="uid://iron5a75ye8o" path="res://scenes/loot/vodka.png" id="1_6mdjo"]
+[ext_resource type="Script" uid="uid://job7h2nusv1r" path="res://scenes/loot/loot.gd" id="1_dyds6"]
+[ext_resource type="Texture2D" uid="uid://c7g386xanqbc7" path="res://scenes/loot/beer.png" id="2_dyds6"]
+[ext_resource type="Texture2D" uid="uid://emcryslwgrn4" path="res://scenes/loot/salo.png" id="3_nwktx"]
+[ext_resource type="Texture2D" uid="uid://hru13p3x34qk" path="res://scenes/loot/apple.png" id="4_6w4ea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dyds6"]
+radius = 125.0
+
+[node name="loot" type="Area2D" unique_id=904022397]
+script = ExtResource("1_dyds6")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=555895122]
+position = Vector2(8, -54)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1579268842]
+shape = SubResource("CircleShape2D_dyds6")
+
+[node name="vodka" type="Sprite2D" parent="." unique_id=853910119]
+visible = false
+position = Vector2(8, -54)
+texture = ExtResource("1_6mdjo")
+
+[node name="beer" type="Sprite2D" parent="." unique_id=1071604701]
+visible = false
+position = Vector2(8, -54)
+texture = ExtResource("2_dyds6")
+
+[node name="salo" type="Sprite2D" parent="." unique_id=2082372711]
+visible = false
+position = Vector2(8, -54)
+texture = ExtResource("3_nwktx")
+
+[node name="apple" type="Sprite2D" parent="." unique_id=1941103035]
+visible = false
+position = Vector2(8, -54)
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("4_6w4ea")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -6,6 +6,10 @@ const JUMP_VELOCITY = -250.0
 
 @onready var sprite = $AnimatedSprite2D
 
+func _ready():
+	add_to_group("player")
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
