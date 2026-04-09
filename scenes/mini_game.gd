@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var score_label = $ScoreLabel
+@onready var zakuska = $zakuska
 var timer := 0.0
 @export var spawn_interval := 1.5
 @export var loot_scene = preload("res://scenes/loot/loot.tscn")
@@ -39,4 +40,11 @@ var can_collect_score = true  # чи можна збирати лут зараз
 var current_limit = 0     # поточний рахунок до ліміту 9
 
 func update_ui():
-	score_label.text = "Score: " + str(score)
+	score_label.text = str(score)+ "/50" 
+	if score == 50:
+		zakuska.text = "YOU WIN 🏆"
+	if current_limit == 9:
+		zakuska.text = "потрібно закусити"
+	else:
+		zakuska.text = " "
+			

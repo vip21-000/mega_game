@@ -19,6 +19,10 @@ run/main_scene="uid://bf76pfx1c004f"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Glob="*uid://gvaisvfnps4w"
+
 [input]
 
 left={

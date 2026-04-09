@@ -1519,6 +1519,18 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_lmkgc")
 
+[sub_resource type="Environment" id="Environment_3kuml"]
+background_mode = 1
+background_color = Color(0.720646, 0.047340132, 0.36780336, 1)
+
+[sub_resource type="Gradient" id="Gradient_3kuml"]
+colors = PackedColorArray(0, 0.23384878, 0, 1, 2.7524774e-07, 0.16839314, 1.8049032e-07, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v2cs6"]
+gradient = SubResource("Gradient_3kuml")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
 [node name="mini_game" type="Node2D" unique_id=1822302889]
 script = ExtResource("1_3kuml")
 
@@ -1543,10 +1555,28 @@ tile_set = SubResource("TileSet_0gcsj")
 [node name="loot" parent="." unique_id=732666315 instance=ExtResource("4_0gcsj")]
 position = Vector2(1473, -221)
 
+[node name="zakuska" type="Label" parent="." unique_id=1571445313]
+offset_left = 416.0
+offset_top = -712.0
+offset_right = 780.0
+offset_bottom = -607.0
+theme_override_font_sizes/font_size = 32
+text = "Потрібно закусити"
+
 [node name="ScoreLabel" type="Label" parent="." unique_id=8580477]
 offset_left = 251.0
 offset_top = -701.0
 offset_right = 291.0
 offset_bottom = -652.0
+theme_override_font_sizes/font_size = 32
 text = "0
 "
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=684789200]
+environment = SubResource("Environment_3kuml")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=254822635]
+z_index = -8
+position = Vector2(576.5, -359.5)
+scale = Vector2(19.015625, 12.234375)
+texture = SubResource("GradientTexture2D_v2cs6")

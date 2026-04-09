@@ -68,13 +68,16 @@ func _on_body_entered(body):
 					game.current_limit = 0
 					print("RESET LIMIT")
 				"apple":
+					game.can_collect_score = true
+					game.current_limit = 0
 					game.score -= 5
 					print("-5 💀")
 
 			# обмеження максимум 50
-			if game.score > 50: 
+			if game.score >= 5: 
 				game.score = 50 
 				print("YOU WIN 🏆")
+				get_tree().change_scene_to_file("res://scenes/world.tscn")
 			
 			if game.score < 0: 
 				game.score = 0
