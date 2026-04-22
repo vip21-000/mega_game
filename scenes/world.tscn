@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bw2qg6ttmh61a" path="res://background/house2.png" id="9_pm21f"]
 [ext_resource type="Texture2D" uid="uid://dc33dq418uklj" path="res://background/house5-.png" id="10_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://g55fpcra7euo" path="res://scenes/player/player.tscn" id="11_7iits"]
+[ext_resource type="Texture2D" uid="uid://bktx4tu87u8tp" path="res://icon.svg" id="13_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://dewwd4n65bf4y" path="res://scenes/trigger.tscn" id="14_xo05s"]
 
 [sub_resource type="Environment" id="Environment_dubn7"]
 
@@ -1356,6 +1358,7 @@ texture = ExtResource("10_2lf6f")
 position = Vector2(637, 7)
 
 [node name="minigame" type="Button" parent="player" unique_id=1116851125]
+visible = false
 offset_left = -373.0
 offset_top = -364.0
 offset_right = -287.0
@@ -1368,5 +1371,33 @@ position = Vector2(24, -144)
 scale = Vector2(77.7985, 67.3776)
 zoom = Vector2(1.455, 1.455)
 position_smoothing_enabled = true
+
+[node name="Node2D" parent="." unique_id=1747862147 instance=ExtResource("14_xo05s")]
+position = Vector2(1158, -64)
+
+[node name="NPC" type="Node2D" parent="." unique_id=146667398]
+position = Vector2(1288, -107)
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=766324787]
+position = Vector2(22, 3)
+scale = Vector2(0.609375, 0.609375)
+texture = ExtResource("13_o8fc1")
+
+[node name="Label" type="Label" parent="NPC" unique_id=1884768131]
+offset_left = -218.0
+offset_top = -86.0
+offset_right = -61.0
+offset_bottom = -63.0
+text = "Сусіде, допоможи наколоти
+дрова, я в боргу не залишуся"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="NPC" unique_id=1889892957]
+offset_left = 68.0
+offset_top = -68.0
+offset_right = 167.0
+offset_bottom = -37.0
+text = "Допомогти"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="player/minigame" to="." method="_on_minigame_pressed"]
