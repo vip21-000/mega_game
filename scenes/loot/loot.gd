@@ -74,9 +74,11 @@ func _on_body_entered(body):
 					print("-5 💀")
 
 			# обмеження максимум 50
-			if game.score >= 5: 
+			if game.score >= 1: 
 				game.score = 50 
-				print("YOU WIN 🏆")
+				
+				game.zakuska.text = "YOU WIN 🏆"
+				await get_tree().create_timer(1.0).timeout
 				get_tree().change_scene_to_file("res://scenes/world.tscn")
 			
 			if game.score < 0: 

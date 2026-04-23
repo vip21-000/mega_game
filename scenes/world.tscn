@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bw2qg6ttmh61a" path="res://background/house2.png" id="9_pm21f"]
 [ext_resource type="Texture2D" uid="uid://dc33dq418uklj" path="res://background/house5-.png" id="10_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://g55fpcra7euo" path="res://scenes/player/player.tscn" id="11_7iits"]
-[ext_resource type="Texture2D" uid="uid://bktx4tu87u8tp" path="res://icon.svg" id="13_o8fc1"]
+[ext_resource type="Texture2D" uid="uid://dxcn2xhdocxvp" path="res://background/NPC1.png" id="14_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://dewwd4n65bf4y" path="res://scenes/trigger.tscn" id="14_xo05s"]
 
 [sub_resource type="Environment" id="Environment_dubn7"]
@@ -1378,16 +1378,45 @@ scale = Vector2(77.7985, 67.3776)
 zoom = Vector2(1.455, 1.455)
 position_smoothing_enabled = true
 
-[node name="Node2D" parent="." unique_id=1747862147 instance=ExtResource("14_xo05s")]
+[node name="trigger1" parent="." unique_id=1747862147 instance=ExtResource("14_xo05s")]
 position = Vector2(1158, -64)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=949080737]
+
+[node name="FadeScreen" type="Control" parent="CanvasLayer" unique_id=1620477739]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/FadeScreen" unique_id=390700084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/FadeScreen" unique_id=1607575253]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NPC" type="Node2D" parent="." unique_id=146667398]
 position = Vector2(1288, -107)
 
 [node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=766324787]
-position = Vector2(22, 3)
-scale = Vector2(0.609375, 0.609375)
-texture = ExtResource("13_o8fc1")
+position = Vector2(28, 26)
+scale = Vector2(0.20610838, 0.20610838)
+texture = ExtResource("14_o8fc1")
 
 [node name="Label" type="Label" parent="NPC" unique_id=1884768131]
 offset_left = -218.0

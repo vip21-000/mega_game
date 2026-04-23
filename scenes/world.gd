@@ -5,11 +5,15 @@ extends Node2D
 @onready var npc = $NPC
 @onready var npc_label = $NPC/Label
 @onready var npc_button = $NPC/Button
+@onready var fade_screen = $CanvasLayer/FadeScreen
+@onready var fade_label = $CanvasLayer/FadeScreen/Label
+
 
 func _ready():
 	add_to_group("world")
 	player.SPEED = 150
 	npc.visible = false
+	fade_screen.visible = false
 	if Glob.player_prev_position.x != 0:
 		print("Teleported")
 		player.position = Glob.player_prev_position
@@ -18,10 +22,24 @@ func _ready():
 	apply_effects()
 	
 func _on_minigame_pressed() -> void:
-	Glob.player_prev_position = $player.position
+	npc.visible = false
+	player.SPEED = 0   # блокуємо рух
+	show_transition()
+
+func show_transition():
+	fade_screen.visible = true
+	
+	match Glob.stage:
+		1:
+			fade_label.text = "Ти відчуваєш легке сп'яніння..."
+		2:
+			fade_label.text = "Світ починає плисти..."
+		3:
+			fade_label.text = "Ти вже майже нічого не контролюєш..."
+	
+	await get_tree().create_timer(5.0).timeout
+	
 	get_tree().change_scene_to_file("res://scenes/mini_game.tscn")
-
-
 
 func setup_npc():
 	match Glob.stage:
@@ -49,7 +67,7 @@ func start_invert_controls():
 func apply_effects():
 	match Glob.stage:
 		1:
-			player.sprite.play("happy")
+			player.sprite.play("idle_alk")
 		
 		2:
 			start_invert_controls()

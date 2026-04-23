@@ -33,6 +33,7 @@ func spawn_loot():
 	loot.position.y = -710
 	
 	add_child(loot)
+	
 
 
 var score = 0             # загальний рахунок
@@ -41,8 +42,10 @@ var current_limit = 0     # поточний рахунок до ліміту 9
 
 func update_ui():
 	score_label.text = str(score)+ "/50" 
-	if score == 50:
+	if score == 5:
 		zakuska.text = "YOU WIN 🏆"
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://scenes/world.tscn")
 	if current_limit == 9:
 		zakuska.text = "потрібно закусити"
 	else:
