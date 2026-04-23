@@ -1300,6 +1300,12 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_hsdmi")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8fc1"]
+bg_color = Color(0.056291588, 0.05629161, 0.05629155, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo05s"]
+bg_color = Color(0.000113828006, 0.00011382805, 0.00011382793, 1)
+
 [node name="world" type="Node2D" unique_id=1587666159]
 script = ExtResource("1_q5onr")
 metadata/_edit_vertical_guides_ = [173.0]
@@ -1388,6 +1394,7 @@ offset_left = -218.0
 offset_top = -86.0
 offset_right = -61.0
 offset_bottom = -63.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_o8fc1")
 text = "Сусіде, допоможи наколоти
 дрова, я в боргу не залишуся"
 metadata/_edit_use_anchors_ = true
@@ -1397,6 +1404,7 @@ offset_left = 68.0
 offset_top = -68.0
 offset_right = 167.0
 offset_bottom = -37.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xo05s")
 text = "Допомогти"
 metadata/_edit_use_anchors_ = true
 

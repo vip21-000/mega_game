@@ -22,6 +22,6 @@ func activate():
 	var world = get_tree().get_first_node_in_group("world")
 	
 	world.npc.visible = true
-	world.npc.position = Vector2(500, 300)  # тимчасово
+	world.npc.position = Vector2(1288.0, -107.0)  # тимчасово
 	
 	Glob.stage += 1

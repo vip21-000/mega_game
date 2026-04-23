@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player : Player = $player
 
-@onready var npc = $Node2D/NPC
+@onready var npc = $NPC
 @onready var npc_label = $NPC/Label
 @onready var npc_button = $NPC/Button
 
@@ -26,7 +26,8 @@ func _on_minigame_pressed() -> void:
 func setup_npc():
 	match Glob.stage:
 		0:
-			npc_label.text = "Привіт, почнемо 😏"
+			npc_label.text = "Сусіде, допоможи наколоти
+дрова, я в боргу не залишуся"
 		1:
 			npc_label.text = "Тепер складніше 😈"
 		2:
