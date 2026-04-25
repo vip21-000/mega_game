@@ -6,7 +6,7 @@ var timer := 0.0
 @export var spawn_interval := 1.5
 @export var loot_scene = preload("res://scenes/loot/loot.tscn")
 var loot_types = ["vodka", "beer", "salo", "apple"]
-
+var game_over := false
 
 func _ready():
 	var player = get_node("player")
@@ -17,12 +17,14 @@ func _ready():
 	update_ui()
 
 func _process(delta):
+	if game_over:
+		return
+		
 	timer += delta
 	
 	if timer >= spawn_interval:
 		spawn_loot()
 		timer = 0.0
-
 
 
 
@@ -44,7 +46,7 @@ func update_ui():
 	score_label.text = str(score)+ "/50" 
 	if score == 5:
 		zakuska.text = "YOU WIN 🏆"
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 	if current_limit == 9:
 		zakuska.text = "потрібно закусити"

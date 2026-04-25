@@ -31,7 +31,8 @@ func show_transition():
 	
 	match Glob.stage:
 		1:
-			fade_label.text = "Ти відчуваєш легке сп'яніння..."
+			fade_label.text = "Після важкої роботи, коли останнє поліно впало, залишилось відчуття втоми й задоволення.
+Тут сусід покликав до себе й накрив щедру поляну — робота змінилася відпочинком і гарним настроєм."
 		2:
 			fade_label.text = "Світ починає плисти..."
 		3:
@@ -57,7 +58,7 @@ func setup_npc():
 func _on_npc_button_pressed():
 	npc.visible = false
 	Glob.player_prev_position = player.position
-	get_tree().change_scene_to_file("res://scenes/mini_game.tscn")
+	show_transition()
 
 
 func start_invert_controls():
@@ -67,11 +68,10 @@ func start_invert_controls():
 func apply_effects():
 	match Glob.stage:
 		1:
-			player.sprite.play("idle_alk")
+			player.drunk_idle = true
 		
 		2:
-			start_invert_controls()
+			player.drunk_walk = true 
 		
 		3:
 			start_invert_controls()
-			player.sprite.play("crazy")

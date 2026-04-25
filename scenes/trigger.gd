@@ -20,8 +20,10 @@ func activate():
 	print("ACTIVATE!!!")
 	
 	var world = get_tree().get_first_node_in_group("world")
+	var player = world.player
 	
 	world.npc.visible = true
-	world.npc.position = Vector2(1288.0, -107.0)  # тимчасово
+	world.npc.position = Vector2(1288.0, -107.0) 	
+	player.SPEED = 0
 	
 	Glob.stage += 1

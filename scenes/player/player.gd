@@ -5,6 +5,8 @@ class_name Player
 @export var SPEED: float = 150.0
 const JUMP_VELOCITY = -250.0
 
+var drunk_walk := false
+var drunk_idle := false
 
 @onready var sprite = $AnimatedSprite2D
 
@@ -33,7 +35,15 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if direction != 0:
-		sprite.play("walk")
-		sprite.flip_h = direction < 0
+		if drunk_walk:
+			sprite.play("walk_alk")
+			sprite.flip_h = direction < 0
+		else:
+			sprite.play("walk")
+			sprite.flip_h = direction < 0
+		
 	else:
-		sprite.play("idle")
+		if drunk_idle:
+			sprite.play("idle_alk")
+		else:
+			sprite.play("idle")
