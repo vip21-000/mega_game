@@ -15,6 +15,13 @@ func _ready():
 	spawn_loot()
 	add_to_group("game")
 	update_ui()
+	match Glob.stage:
+		1:
+			spawn_interval = 1.5
+		2:
+			spawn_interval = 1.0
+		3:
+			spawn_interval = 0.6
 
 func _process(delta):
 	if game_over:

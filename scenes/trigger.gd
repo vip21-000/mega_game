@@ -6,7 +6,6 @@ var used := false
 
 
 func _on_body_entered(body):
-	
 	print("ENTERED TRIGGER")
 	print("stage:", Glob.stage, " trigger:", trigger_id)
 	if used:
@@ -17,13 +16,16 @@ func _on_body_entered(body):
 			activate()
 
 func activate():
-	print("ACTIVATE!!!")
-	
 	var world = get_tree().get_first_node_in_group("world")
-	var player = world.player
 	
-	world.npc.visible = true
-	world.npc.position = Vector2(1288.0, -107.0) 	
-	player.SPEED = 0
+	if world == null:
+		return
+	if Glob.stage >= world.npcs.size():
+		return
+	
+	var npc = world.npcs[Glob.stage]
+	
+	npc.visible = true
+	world.player.SPEED = 0
 	
 	Glob.stage += 1

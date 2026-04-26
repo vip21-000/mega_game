@@ -2,9 +2,7 @@ extends Node2D
 
 @onready var player : Player = $player
 
-@onready var npc = $NPC
-@onready var npc_label = $NPC/Label
-@onready var npc_button = $NPC/Button
+@onready var npcs = [$NPC1, $NPC2, $NPC3]
 @onready var fade_screen = $CanvasLayer/FadeScreen
 @onready var fade_label = $CanvasLayer/FadeScreen/Label
 
@@ -12,16 +10,17 @@ extends Node2D
 func _ready():
 	add_to_group("world")
 	player.SPEED = 150
-	npc.visible = false
+	for npc in npcs:
+		npc.visible = false
 	fade_screen.visible = false
 	if Glob.player_prev_position.x != 0:
-		print("Teleported")
 		player.position = Glob.player_prev_position
 		
 	setup_npc()
 	apply_effects()
 	
 func _on_minigame_pressed() -> void:
+	var npc = get_current_npc()
 	npc.visible = false
 	player.SPEED = 0   # блокуємо рух
 	show_transition()
@@ -33,34 +32,43 @@ func show_transition():
 		1:
 			fade_label.text = "Після важкої роботи, коли останнє поліно впало, залишилось відчуття втоми й задоволення.
 Тут сусід покликав до себе й накрив щедру поляну — робота змінилася відпочинком і гарним настроєм."
+			fade_screen.size = Vector2(1154.0, 652.0)
 		2:
 			fade_label.text = "Світ починає плисти..."
+			fade_screen.size = Vector2(1154.0, 652.0)
 		3:
 			fade_label.text = "Ти вже майже нічого не контролюєш..."
+			fade_screen.size = Vector2(1154.0, 652.0)
 	
 	await get_tree().create_timer(5.0).timeout
 	
 	get_tree().change_scene_to_file("res://scenes/mini_game.tscn")
 
 func setup_npc():
+	var npc = get_current_npc()
+	var label = npc.get_node("Label")
+	var button = npc.get_node("Button")
 	match Glob.stage:
 		0:
-			npc_label.text = "Сусіде, допоможи наколоти
+			label.text = "Сусіде, допоможи наколоти
 дрова, я в боргу не залишуся"
 		1:
-			npc_label.text = "Тепер складніше 😈"
+			label.text = "Тепер складніше 😈"
 		2:
-			npc_label.text = "Останній рівень 💀"
+			label.text = "Останній рівень 💀"
 	
-	npc_button.text = "GO"
-	npc_button.pressed.connect(_on_npc_button_pressed)
+	button.text = "GO"
+	button.pressed.connect(_on_npc_button_pressed)
 
 func _on_npc_button_pressed():
+	var npc = get_current_npc()
 	npc.visible = false
 	Glob.player_prev_position = player.position
 	show_transition()
 
-
+func get_current_npc():
+	return npcs[Glob.stage]
+	
 func start_invert_controls():
 	player.invert = true
 

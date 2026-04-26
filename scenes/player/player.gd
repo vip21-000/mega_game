@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			sprite.flip_h = direction < 0
 		
 	else:
-		if drunk_idle:
+		if drunk_idle or drunk_walk:
 			sprite.play("idle_alk")
 		else:
 			sprite.play("idle")

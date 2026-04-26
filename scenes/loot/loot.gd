@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var loot_type: String = "vodka"
-@export var fall_speed: float = 200.0
+@export var fall_speed: float = 200 * Glob.stage 
 
 
 func _ready():
